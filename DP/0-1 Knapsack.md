@@ -1,10 +1,10 @@
 
 # 0-1 Knapsack
-**Author:** Debdyut Hajra
-**Created date:** 10 December 2021
-**Last updated:** 10 December 2021
+**Author:** Debdyut Hajra <br/>
+**Created date:** 10 December 2021 <br/>
+**Last updated:** 10 December 2021 <br/>
 
-**Problem Link:** [0-1 Knapsack](https://practice.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1#)
+**Problem Link:** [0-1 Knapsack](https://practice.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1#) <br/>
 **Tags:** Array, Dynamic Programming
 
 ## Problem
@@ -48,14 +48,14 @@ The primary intuition behind the solution is that given some items have been sel
 ```java
 static int knapSack(int W, int wt[], int val[], int n) 
 {
-	// Return the maximum possible sum of values
-	// starting from first index (0)
+    // Return the maximum possible sum of values
+    // starting from first index (0)
     return knapSack(W, wt, val, n, 0);
 }
 
 static int knapSack(int W, int wt[], int val[], int n, int idx) 
 { 
-	// Base case: No items remaining
+    // Base case: No items remaining
     if (idx == n) {
         return 0;
     }
@@ -63,9 +63,9 @@ static int knapSack(int W, int wt[], int val[], int n, int idx)
     int res = Integer.MIN_VALUE;
     // Check if possible to add the item
     if (W >= wt[idx]) {
-	    // If possible, take the value of the item
-	    // and add the maximum sum of possible values
-	    // from the next items in sequence
+	// If possible, take the value of the item
+	// and add the maximum sum of possible values
+	// from the next items in sequence
         res = val[idx] + knapSack(W-wt[idx], wt, val, n, idx+1); 
     }
     
@@ -86,8 +86,8 @@ In the above recusive solution, we can save some computations by memoizing value
 ```java
 static int knapSack(int W, int wt[], int val[], int n) 
 { 
-	// Initialize all results in dp to -1
-	// All results beyond n items, default to 0
+    // Initialize all results in dp to -1
+    // All results beyond n items, default to 0
     int[][] dp = new int[n+1][1001];
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < 1001; j++) {
@@ -96,13 +96,13 @@ static int knapSack(int W, int wt[], int val[], int n)
     }
     
     // Return the maximum possible sum of values
-	// starting from first index (0)
+    // starting from first index (0)
     return knapSack(W, wt, val, n, 0, dp);
 }
 
 static int knapSack(int W, int wt[], int val[], int n, int idx, int[][] dp) 
 {
-	// If result is pre-computed, return the corresponding result
+    // If result is pre-computed, return the corresponding result
     if (dp[idx][W] != -1) {
         return dp[idx][W];
     }
@@ -110,7 +110,7 @@ static int knapSack(int W, int wt[], int val[], int n, int idx, int[][] dp)
     int res = Integer.MIN_VALUE;
     // Check if possible to add the item
     if (W >= wt[idx]) {
-	    // If possible, take the value of the item
+        // If possible, take the value of the item
 	    // and add the maximum sum of possible values
 	    // from the next items in sequence
         res = val[idx] + knapSack(W-wt[idx], wt, val, n, idx+1, dp); 
@@ -134,7 +134,7 @@ The preceding recursive solution has been transformed to form an iterative solut
 ```java
 static int knapSack(int W, int wt[], int val[], int n) 
 { 
-	// All results beyond n items, default to 0
+    // All results beyond n items, default to 0
     int[][] dp = new int[n+1][1001];
     // Begin looping from last item
     for (int i = n-1; i >= 0; i--) {
@@ -142,20 +142,20 @@ static int knapSack(int W, int wt[], int val[], int n)
         for (int j = 0; j <= W; j++) {
 	        // Check if possible to add the item
             if (j >= wt[i]) {
-	            // If possible, take the value of the item
-			    // and add the maximum sum of possible values
-			    // from the next items in sequence
+                // If possible, take the value of the item
+                // and add the maximum sum of possible values
+                // from the next items in sequence
                 dp[i][j] = val[i] + dp[i+1][j - wt[i]];
             }
             
-			// Store the max result of picking the item (if possible)
-			// and the result of not picking the item
-			// Store the result for reuse in subsequent steps
+            // Store the max result of picking the item (if possible)
+            // and the result of not picking the item
+            // Store the result for reuse in subsequent steps
             dp[i][j] = Math.max(dp[i][j], dp[i+1][j]);
         }
     }
     // Return the maximum possible sum of values
-	// starting from first index (0)
+    // starting from first index (0)
     return dp[0][W];
 }
 ```
@@ -170,8 +170,8 @@ The preceeding dp solutions require an O(n) extra space. The below code optimize
 ```java
 static int knapSack(int W, int wt[], int val[], int n) 
 {
-	// Stores the results for all possible weight values
-	// starting from the next item in sequence  
+    // Stores the results for all possible weight values
+    // starting from the next item in sequence  
     int[] next = new int[1001];
     // Begin looping from last item
     for (int i = n-1; i >= 0; i--) {
@@ -180,14 +180,14 @@ static int knapSack(int W, int wt[], int val[], int n)
         for (int j = 0; j <= W; j++) {
 	        // Check if possible to add the item
             if (j >= wt[i]) {
-	            // If possible, take the value of the item
-			    // and add the maximum sum of possible values
-			    // from the next items in sequence
+	             If possible, take the value of the item
+                // and add the maximum sum of possible values
+                // from the next items in sequence
                 curr[j] = val[i] + next[j - wt[i]];
             }
             // Store the max result of picking the item (if possible)
-			// and the result of not picking the item
-			// Store the result for reuse in subsequent steps
+            // and the result of not picking the item
+            // Store the result for reuse in subsequent steps
             curr[j] = Math.max(curr[j], next[j]);
         }
         // For next iteration, curr becomes the next
