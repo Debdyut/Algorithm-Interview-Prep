@@ -27,11 +27,11 @@ Given a `m x n` matrix, find the minimum cost to move from `[0][0]` to `[m-1][n-
 ## Solutions
 
 We will look at the following solutions:
-1. [Recursive](#recursive)
-2. [Recursive DP](#recursive-dp)
-3. [Iterative DP](#iterative-dp)
-4. [Space optimized DP](#space-optimized-dp)
-5. [arraysum (helper method)]()
+1. [Recursive](#1-recursive)
+2. [Recursive DP](##2-recursive-dp)
+3. [Iterative DP](#3-iterative-dp)
+4. [Space optimized DP](#4-space-optimized-dp)
+5. [5. Print path (helper method)](#5-print-path-helper-method)
 
 ### 1. Recursive
 The primary intuition behind the solution is that from a given cell we will either move to the right or move down, based on which path results in minimum cost, until we reach the destination cell. 
@@ -46,6 +46,7 @@ public int minPathSum(int[][] grid) {
     int m = grid.length;
     // Number of columns
     int n = grid[0].length;
+
     // Return the minimum cost to go from [0][0] to [m-1][n-1]
     return minPathSum(grid, m, n, 0, 0); 
 }
@@ -190,8 +191,9 @@ public int minPathSum(int[][] grid)
     for (int i = m-1; i >= 0; i--) {
         int[] tmp = new int[n];
         for (int j = n-1; j >= 0; j--) {
+            int max = 0;
 	        // Minimum cost if going down
-            int down = ( i == m-1 ) ? Integer.MAX_VALUE : dp[j];
+            if ( i < m-1 ) max = dp[j];
             // Minimum cost if going right 
             int right = ( j == n-1 ) ? Integer.MAX_VALUE : tmp[j+1];
             
@@ -211,15 +213,26 @@ public int minPathSum(int[][] grid)
     return dp[0]; 
 }
 ```
-### 5. arraysum (helper method)
-Sum of the given array of integers.
+### 5. Print path (helper method)
+Print the minimum cost path. Works with 2 and 3 above.
 ```java
-static int arraysum(int N, int[] arr) 
-{
-    int  sum = 0;
-    for (int i = 0; i < N; i++) {
-        sum += arr[i];
+// Create a result collection
+List<String> res = new ArrayList<>();
+// Begin from top-left corner
+for (int i = 0, j = 0; i != m-1 || j != n-1; ) {            
+    // Add current cell to result
+    res.add("[" + i + ", " + j + "]");
+    // Find the next dp value
+    int tmp = dp[i][j] - grid[i][j];
+    // Determine whether it matches with the below or right cell
+    if (i < m-1 && tmp == dp[i+1][j]) {
+        // Move down
+        i++;
+    } else {
+        // Move right
+        j++;
     }
-    return sum;
 }
+// Print the result
+System.out.println(String.join(" -> ", res.toArray(new String[res.size()])));
 ```
