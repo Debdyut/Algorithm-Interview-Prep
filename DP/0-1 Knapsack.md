@@ -111,8 +111,8 @@ static int knapSack(int W, int wt[], int val[], int n, int idx, int[][] dp)
     // Check if possible to add the item
     if (W >= wt[idx]) {
         // If possible, take the value of the item
-	    // and add the maximum sum of possible values
-	    // from the next items in sequence
+        // and add the maximum sum of possible values
+        // from the next items in sequence
         res = val[idx] + knapSack(W-wt[idx], wt, val, n, idx+1, dp); 
     }
     
@@ -138,9 +138,9 @@ static int knapSack(int W, int wt[], int val[], int n)
     int[][] dp = new int[n+1][1001];
     // Begin looping from last item
     for (int i = n-1; i >= 0; i--) {
-	    // For all possible weight values
+        // For all possible weight values
         for (int j = 0; j <= W; j++) {
-	        // Check if possible to add the item
+            // Check if possible to add the item
             if (j >= wt[i]) {
                 // If possible, take the value of the item
                 // and add the maximum sum of possible values
@@ -178,9 +178,9 @@ static int knapSack(int W, int wt[], int val[], int n)
         int[] curr = new int[1001];
         // For all possible weight values
         for (int j = 0; j <= W; j++) {
-	        // Check if possible to add the item
+            // Check if possible to add the item
             if (j >= wt[i]) {
-	             If possible, take the value of the item
+	            // If possible, take the value of the item
                 // and add the maximum sum of possible values
                 // from the next items in sequence
                 curr[j] = val[i] + next[j - wt[i]];
