@@ -180,7 +180,7 @@ static int knapSack(int W, int wt[], int val[], int n)
         for (int j = 0; j <= W; j++) {
             // Check if possible to add the item
             if (j >= wt[i]) {
-	            // If possible, take the value of the item
+                // If possible, take the value of the item
                 // and add the maximum sum of possible values
                 // from the next items in sequence
                 curr[j] = val[i] + next[j - wt[i]];
