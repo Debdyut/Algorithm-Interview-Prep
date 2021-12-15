@@ -27,11 +27,11 @@ arr = {1, 5, 11, 5}
 ## Solutions
 
 We will look at the following solutions:
-1. [Recursive]()
-2. [Recursive DP]()
-3. [Iterative DP]()
-4. [Space optimized DP]()
-5. [arraysum (helper method)]()
+1. [Recursive](#1-recursive)
+2. [Recursive DP](#2-recursive-dp)
+3. [Iterative DP](#3-iterative-dp)
+4. [Space optimized DP](#4-space-optimized-dp)
+5. [arraysum (helper method)](#5-arraysum-helper-method)
 
 ### 1. Recursive
 The primary intuition behind the solution is that if the sum of all the array elements is odd, then it is not possible to create 2 equal partitions. If sum is even, the target is to find a subset, whose sum is equal to half of the array sum.

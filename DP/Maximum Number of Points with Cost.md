@@ -36,7 +36,7 @@ Your final score is 11 - 2 = 9.
 
 We will look at the following solutions:
 1. [Recursive](#1-recursive)
-2. [Recursive DP](##2-recursive-dp)
+2. [Recursive DP](#2-recursive-dp)
 3. [Iterative DP](#3-iterative-dp)
 4. [Space optimized DP](#4-space-optimized-dp)
 5. [Time-optimized DP](#5-time-optimized-dp)

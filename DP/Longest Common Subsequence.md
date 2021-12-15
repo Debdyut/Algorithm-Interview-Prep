@@ -26,10 +26,9 @@ Given 2 strings, find the longest common subsequence. Subsequence is a subset of
 
 We will look at the following solutions:
 1. [Recursive](#1-recursive)
-2. [Recursive DP](##2-recursive-dp)
+2. [Recursive DP](#2-recursive-dp)
 3. [Iterative DP](#3-iterative-dp)
 4. [Space optimized DP](#4-space-optimized-dp)
-5. [Time-optimized DP](#5-time-optimized-dp)
 
 ### 1. Recursive
 The primary intuition behind the solution is that starting from given indices, find the longest subsequence length. If the characters at the given indices we will move both the pointers and simultaneously increment the length by 1. If they don't match, we will take the longest subsequence length by incrementing the pointers on text1 and text2 in turns.  

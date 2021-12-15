@@ -31,11 +31,11 @@ Total amount happiness he can get = 30 + 90 + 15 = 135.
 ## Solutions
 
 We will look at the following solutions:
-1. [Recursive]()
-2. [Recursive DP]()
-3. [Iterative DP]()
-4. [Space optimized DP]()
-5. [`arraymax` helper method]()
+1. [Recursive](#1-recursive)
+2. [Recursive DP](#2-recursive-dp)
+3. [Iterative DP](#3-iterative-dp)
+4. [Space optimized DP](#4-space-optimized-dp)
+5. [`arraymax` helper method](#5-arraymax-helper-method)
 
 ### 1. Recursive
 The primary intuition behind the solution is that given the previous activity type picked, we cannot pick the same activity type in the immediate next row. We will pick from the remaining activities, considering all the possibilities in the process, to find the exact combination which gives the maximum happiness.

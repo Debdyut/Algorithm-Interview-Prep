@@ -31,10 +31,9 @@ weight[] = {4,5,1}
 
 We will look at the following solutions:
 1. [Recursive](#1-recursive)
-2. [Recursive DP](##2-recursive-dp)
+2. [Recursive DP](#2-recursive-dp)
 3. [Iterative DP](#3-iterative-dp)
 4. [Space optimized DP](#4-space-optimized-dp)
-5. [`arraymax` helper method]()
 
 ### 1. Recursive
 The primary intuition behind the solution is that given some items have been selected and given the remaining weight, whether or not we can pick the current item. Also, how the result will be impacted if we choose to not pick the current item, such that the remaining weight remains the same for the next item. We then try to find the combination for which we get the maximum sum of values.

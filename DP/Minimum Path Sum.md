@@ -28,7 +28,7 @@ Given a `m x n` matrix, find the minimum cost to move from `[0][0]` to `[m-1][n-
 
 We will look at the following solutions:
 1. [Recursive](#1-recursive)
-2. [Recursive DP](##2-recursive-dp)
+2. [Recursive DP](#2-recursive-dp)
 3. [Iterative DP](#3-iterative-dp)
 4. [Space optimized DP](#4-space-optimized-dp)
 5. [Print path (helper method)](#5-print-path-helper-method)
