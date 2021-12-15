@@ -258,12 +258,12 @@ public long maxPoints(int[][] points) {
 The preceeding dp solution has an `O(m x n x n)` or `O(n^3)` time complexity. The below code optimizes the time complexity to `O(n^2)`.
 
 **Mathematically:** <br />
- => `points[i][currCol]` + `abs(currCol-prevCol) + dp[i+1][prevCol]` <br />
+ => `points[i][currCol]` + `abs(currCol-prevCol)` + `dp[i+1][prevCol]` <br />
 
 => `(points[i][currCol] + currCol)` + `(dp[i+1][prevCol] - prevCol)` <br />
 `(points[i][currCol] - currCol)` + `(dp[i+1][prevCol] + prevCol)`
 
-For each cell, `(points[i][currCol] + currCol)` and `(points[i][currCol] - currCol)` are constanct. And try to maximize `(dp[i+1][prevCol] - prevCol)` on the left and `(dp[i+1][prevCol] + prevCol)` on the right. 
+For each cell, `(points[i][currCol] + currCol)` and `(points[i][currCol] - currCol)` are constants. And try to maximize `(dp[i+1][prevCol] - prevCol)` on the left and `(dp[i+1][prevCol] + prevCol)` on the right. 
 
 Here we are going the reverse direction, hence the signs are reversed.
 
