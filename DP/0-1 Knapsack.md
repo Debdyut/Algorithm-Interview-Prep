@@ -30,10 +30,10 @@ weight[] = {4,5,1}
 ## Solutions
 
 We will look at the following solutions:
-1. [Recursive]()
-2. [Recursive DP]()
-3. [Iterative DP]()
-4. [Space optimized DP]()
+1. [Recursive](#1-recursive)
+2. [Recursive DP](##2-recursive-dp)
+3. [Iterative DP](#3-iterative-dp)
+4. [Space optimized DP](#4-space-optimized-dp)
 5. [`arraymax` helper method]()
 
 ### 1. Recursive

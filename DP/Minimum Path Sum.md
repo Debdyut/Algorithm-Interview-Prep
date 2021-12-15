@@ -31,7 +31,7 @@ We will look at the following solutions:
 2. [Recursive DP](##2-recursive-dp)
 3. [Iterative DP](#3-iterative-dp)
 4. [Space optimized DP](#4-space-optimized-dp)
-5. [5. Print path (helper method)](#5-print-path-helper-method)
+5. [Print path (helper method)](#5-print-path-helper-method)
 
 ### 1. Recursive
 The primary intuition behind the solution is that from a given cell we will either move to the right or move down, based on which path results in minimum cost, until we reach the destination cell. 
