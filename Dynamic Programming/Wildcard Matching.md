@@ -236,9 +236,12 @@ public boolean isMatch(String s, String p) {
             }
             // If the pattern has a '*' at the given position
             if (p.charAt(j) == '*') {
-                tmp[j] = dp[j] || dp[j+1] || tmp[j+1];
+                tmp[j] = dp[j] // Multiple match 
+                         || dp[j+1] // One match
+                         || tmp[j+1]; // No match
             }
         }
+        // Update the dp
         dp = tmp;
     }
     // Return the result
