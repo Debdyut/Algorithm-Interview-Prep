@@ -1,8 +1,7 @@
-
 # Partition Equal Subset Sum
-**Author:** Debdyut Hajra
-**Created date:** 14 December 2021
-**Last updated:** 14 December 2021
+**Author:** Debdyut Hajra </br>
+**Created date:** 14 December 2021 </br>
+**Last updated:** 14 December 2021 </br>
 
 **Problem Link:** [Partition Equal Subset Sum](https://practice.geeksforgeeks.org/problems/subset-sum-problem2014/1#)
 **Tags:** Array, Dynamic Programming
@@ -13,16 +12,16 @@ Given an array, check if it is possible to create 2 subsets of equal sum using a
 
 **Example:**
 
-**Input:** 
-**Input:** N = 4
-arr = {1, 5, 11, 5}
-**Output:** YES
-**Explaination:**  The two parts are {1, 5, 5} and {11}.
+**Input:** </br>
+N = 4 </br>
+arr = {1, 5, 11, 5} </br>
+**Output:** YES </br>
+**Explaination:**  The two parts are {1, 5, 5} and {11}. </br>
 
 **Constraints:**
 
-1 ≤ N ≤ 100  
-1 ≤ arr[i] ≤ 1000
+- `1 ≤ N ≤ 100`
+- `1 ≤ arr[i] ≤ 1000`
 
 ## Solutions
 
