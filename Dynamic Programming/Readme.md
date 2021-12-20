@@ -14,3 +14,12 @@
 | 10 | Longest Common Subsequence | [Link](https://leetcode.com/problems/longest-common-subsequence/) | [Link](https://github.com/Debdyut/Algorithm-Interview-Prep/blob/main/Dynamic%20Programming/Longest%20Common%20Subsequence.md)
 | 11 | Edit Distance | [Link](https://leetcode.com/problems/edit-distance/) | [Link](https://github.com/Debdyut/Algorithm-Interview-Prep/blob/main/Dynamic%20Programming/Edit%20Distance.md)
 | 12 | Wildcard Matching | [Link](https://leetcode.com/problems/wildcard-matching/) | [Link](https://github.com/Debdyut/Algorithm-Interview-Prep/blob/main/Dynamic%20Programming/Wildcard%20Matching.md)
+
+
+<br/>
+
+## Additional problems
+
+| SL No       | Name        | Source        | Problem     | Solution
+| ----------- | ----------- | ----------- | ----------  | ----------
+| 1 | Partition Array for Maximum Sum | [Leetcode](https://leetcode.com/) |[Link](https://leetcode.com/problems/partition-array-for-maximum-sum/) | [Link](https://github.com/Debdyut/Algorithm-Interview-Prep/blob/main/Dynamic%20Programming/Partition%20Array%20for%20Maximum%20Sum.md)
