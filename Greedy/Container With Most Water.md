@@ -1,14 +1,14 @@
 # Container With Most Water
 **Author:** Debdyut Hajra </br>
-**Created date:** 14 December 2021 </br>
-**Last updated:** 14 December 2021 </br>
+**Created date:** 19 December 2021 </br>
+**Last updated:** 19 December 2021 </br>
 
-**Problem Link:** [Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
+**Problem Link:** [Container With Most Water](https://leetcode.com/problems/container-with-most-water/) </br>
 **Tags:** Array, Dynamic Programming
 
 ## Problem
 
-Given an array, check if it is possible to create 2 subsets of equal sum using all the elements.
+Given an height array, find the maximum volume which can be created by any 2 height elements and the corresponding distance between them.
 
 **Example:**
 
@@ -24,7 +24,7 @@ Given an array, check if it is possible to create 2 subsets of equal sum using a
 
 ## Solutions
 
-The primary intuition behind the solution is that for any volume which can be created by using middle elements, to become greater .
+The primary intuition behind the solution is that for the volume created by using middle elements, to become greater than that created by relatively outer elements, should be enclosed by compartively larger height boundaries. So we start by taking 2 pointers at the 2 extremes of the array, and move inwards. At each step we calculate the resultant volume and keep track of the maximum volume encountered. Next we check which pointer is pointing to the smaller boundary, and move the subsequent pointer inwards.
 
 **height:** Input array
 
