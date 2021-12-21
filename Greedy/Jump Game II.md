@@ -1,7 +1,7 @@
 # Jump Game II
 **Author:** Debdyut Hajra </br>
-**Created date:** 19 December 2021 </br>
-**Last updated:** 19 December 2021 </br>
+**Created date:** 21 December 2021 </br>
+**Last updated:** 21 December 2021 </br>
 
 **Problem Link:** [45. Jump Game II](https://leetcode.com/problems/jump-game-ii/) </br>
 **Tags:** Array, Dynamic Programming, Greedy
