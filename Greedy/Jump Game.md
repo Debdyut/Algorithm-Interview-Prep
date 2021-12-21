@@ -18,8 +18,8 @@ Given an array where each index indicates the maximum number of indices which ca
 
 **Constraints:**
 
-- `1 <= nums.length <= 104`
-- `0 <= nums[i] <= 105`
+- `1 <= nums.length <= 10^4`
+- `0 <= nums[i] <= 10^5`
 
 ## Solutions
 
