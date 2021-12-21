@@ -1,4 +1,4 @@
-# Dynamic Programming
+# Greedy
 
 | SL No       | Name        | Source       | Problem     | Solution
 | ----------- | ----------- | ------------ | ----------- | ----------
