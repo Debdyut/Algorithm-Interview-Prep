@@ -4,7 +4,7 @@
 **Last updated:** 19 December 2021 </br>
 
 **Problem Link:** [Container With Most Water](https://leetcode.com/problems/container-with-most-water/) </br>
-**Tags:** Array, Dynamic Programming
+**Tags:** Array, Greedy
 
 ## Problem
 
