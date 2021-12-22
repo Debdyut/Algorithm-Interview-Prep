@@ -27,8 +27,8 @@ Given an array of ratings for a number of children, find the total minimum numbe
 ## Solutions
 
 We will look at the following solutions:
-1. [Greedy (Multiple-pass, O(n) space)](#1-greedy-multiple-pass-O-n-space)
-2. [Greedy (One-pass, O(1) space)](#2-greedy-one-pass-O-1-space)
+1. [Greedy (Multiple-pass, O(n) space)](#1-greedy-multiple-pass-on-space)
+2. [Greedy (One-pass, O(1) space)](#2-greedy-one-pass-o1-space)
 
 ### 1. Greedy (Multiple-pass, O(n) space)
 
