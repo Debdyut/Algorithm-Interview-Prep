@@ -1,28 +1,32 @@
 
-# Fibonacci Number
+# N-th Tribonacci Number
 **Author:** Debdyut Hajra <br/>
 **Created date:** 22 December 2021 <br/>
 **Last updated:** 22 December 2021 <br/>
 
-**Problem Link:** [509. Fibonacci Number](https://leetcode.com/problems/fibonacci-number/) <br/>
-**Tags:** Math, Dynamic Programming, Recursion, Memoization
+**Problem Link:** [1137. N-th Tribonacci Number](https://leetcode.com/problems/n-th-tribonacci-number/) <br/>
+**Tags:** Math, Dynamic Programming, Memoization
 
 ## Problem
 
-Find n<sup>th</sup> fibonacci number, given:
+Find n<sup>th</sup> tribonacci number, given:
 - `f(0) = 0`
 - `f(1) = 1`
-- `f(n) = f(n-1) + f(n-2)`
+- `f(2) = 1`
+- `f(n) = f(n-1) + f(n-2) + f(n-3)`
 
 **Example:**
 
-**Input:** n = 2 <br/>
-**Output:** 1 <br/>
-**Explanation:** F(2) = F(1) + F(0) = 1 + 0 = 1. <br/>
+**Input:** n = 4 <br/>
+**Output:** 4 <br/>
+**Explanation:** <br/>
+T_3 = 0 + 1 + 1 = 2 <br/>
+T_4 = 1 + 1 + 2 = 4
 
 **Constraints:**
 
-- `0 <= n <= 30`
+- `0 <= n <= 37`
+- `The answer is guaranteed to fit within a 32-bit integer, ie. answer <= 2^31 - 1.`
 
 ## Solutions
 
@@ -38,17 +42,17 @@ We will look at the following solutions:
 **n:** Input number <br/>
 
 ```java
-public int fib(int n) {
+public int tribonacci(int n) {
     // Base case: f(0) = 0
     if (n == 0) {
         return 0;
-    }    
-    // Base case: f(1) = 1
-    if (n == 1) {
-        return 1;
     }
-    // Standard formula of fibonacci number
-    return fib(n-1) + fib(n-2);
+    // Base case: f(1) = 1 & f(2) = 1
+    if (n == 1 || n == 2) {
+        return 1;
+    }      
+    // Standard formula of tribonacci number  
+    return tribonacci(n-1) + tribonacci(n-2) + tribonacci(n-3);
 }
 ```
 ### 2. Recursive DP
@@ -57,33 +61,32 @@ In the above recusive solution, we can save some computations by memoizing value
 **n:** Input number <br/>
 **dp:** Memoized array <br/>
 ```java
-public int fib(int n) {
+public int tribonacci(int n) {
     // Initialize dp array
     int[] dp = new int[n+1];
     for (int i = 0; i <= n; i++) {
         dp[i] = -1;
     }
-    // Return (n)th fibonnaci number
-    return fibRec(n, dp);
+    // Return (n)th tribonacci number
+    return tribonacciRec(n, dp);
 }
 
-public int fibRec(int n, int[] dp) {
+public int tribonacciRec(int n, int[] dp) {
     // Base case: f(0) = 0
     if (n == 0) {
         return 0;
-    }    
-    // Base case: f(1) = 1
-    if (n == 1) {
-        return 1;
     }
-    
+    // Base case: f(1) = 1 & f(2) = 1
+    if (n == 1 || n == 2) {
+        return 1;
+    }        
+
     // If value is pre-computed, return the value
     if (dp[n] != -1) {
         return dp[n];
-    }
-    // Standard formula of fibonacci number
-    // Store the value for future reuse 
-    return dp[n] = fibRec(n-1, dp) + fibRec(n-2, dp);
+    }        
+    // Standard formula of tribonacci number  
+    return dp[n] = tribonacciRec(n-1, dp) + tribonacciRec(n-2, dp) + tribonacciRec(n-3, dp);
 }
 ```
 ### 3. Iterative DP
@@ -93,25 +96,24 @@ The preceding recursive solution has been transformed to form an iterative solut
 **dp:** Memoized array <br/>
 
 ```java
-public int fib(int n) {
+public int tribonacci(int n) {
     // Base case: f(0) = 0
     if (n == 0) {
         return 0;
     }
-    // Base case: f(1) = 1    
-    if (n == 1) {
+    // Base case: f(1) = 1 & f(2) = 1
+    if (n == 1 || n == 2) {
         return 1;
-    }        
-    
+    }
     // Initialize dp
     int[] dp = new int[n+1];
-    dp[1] = 1;
-    // Compute the fibonacci numbers
-    for (int i = 2; i <= n; i++) {
-        // Standard formula of fibonacci number
-        dp[i] = dp[i-1] + dp[i-2];
+    dp[1] = dp[2] = 1;
+    // Compute the tribonacci numbers
+    for (int i = 3; i <= n; i++) {
+        // Standard formula of tribonacci number
+        dp[i] = dp[i-1] + dp[i-2] + dp[i-3];
     }
-    // Return the (n)th fibonacci number
+    // Return (n)th tribonacci number
     return dp[n];
 }
 ```
@@ -121,25 +123,26 @@ The preceeding dp solutions require an `O(n)` extra space. The below code optimi
 **n:** Input number <br/>
 **dp:** Memoized array <br/>
 ```java
-public int fib(int n) {
+public int tribonacci(int n) {
     // Base case: f(0) = 0
     if (n == 0) {
         return 0;
-    }    
-    // Base case: f(1) = 1
-    if (n == 1) {
-        return 1;
-    }        
-    // Initialize the first 2 fibonacci numbers
-    int a = 0, b = 1;
-    // Compute the fibonacci numbers
-    for (int i = 2; i <= n; i++) {
-        int tmp = b;
-        // Standard formula of fibonacci number
-        b = a + b;
-        a = tmp;
     }
-    // Return the (n)th fibonacci number
-    return b;
+    // Base case: f(1) = 1 & f(2) = 1
+    if (n == 1 || n == 2) {
+        return 1;
+    }
+    // Initialize the first 3 tribonacci numbers
+    int a = 0, b = 1, c = 1;      
+    // Compute the tribonacci numbers  
+    for (int i = 3; i <= n; i++) {
+        // Standard formula of tribonacci number
+        int d = a + b + c;
+        a = b;
+        b = c;
+        c = d;
+    }
+    // Return (n)th tribonacci number
+    return c;
 }
 ```

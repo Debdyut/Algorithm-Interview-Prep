@@ -23,3 +23,4 @@
 | SL No       | Name        | Source        | Problem     | Solution
 | ----------- | ----------- | ----------- | ----------  | ----------
 | 1 | Partition Array for Maximum Sum | [Leetcode](https://leetcode.com/) |[Link](https://leetcode.com/problems/partition-array-for-maximum-sum/) | [Link](https://github.com/Debdyut/Algorithm-Interview-Prep/blob/main/Dynamic%20Programming/Partition%20Array%20for%20Maximum%20Sum.md)
+| 2 | Fibonacci Number | [Leetcode](https://leetcode.com/) |[Link](https://leetcode.com/problems/fibonacci-number/) | [Link](https://github.com/Debdyut/Algorithm-Interview-Prep/blob/main/Dynamic%20Programming/Fibonacci%20Number.md)
