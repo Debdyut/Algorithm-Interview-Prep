@@ -14,3 +14,4 @@
 | ----------- | ----------- | ----------- | ----------  | ----------
 | 1 | Container With Most Water | [Leetcode](https://leetcode.com/) |[Link](https://leetcode.com/problems/container-with-most-water/) | [Link](https://github.com/Debdyut/Algorithm-Interview-Prep/blob/main/Greedy/Container%20With%20Most%20Water.md)
 | 2 | Best Time to Buy and Sell Stock II | [Leetcode](https://leetcode.com/) |[Link](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/) | [Link](https://github.com/Debdyut/Algorithm-Interview-Prep/blob/main/Greedy/Best%20Time%20to%20Buy%20and%20Sell%20Stock%20II.md)
+| 3 | Gas Station | [Leetcode](https://leetcode.com/) |[Link](https://leetcode.com/problems/gas-station/) | [Link](https://github.com/Debdyut/Algorithm-Interview-Prep/blob/main/Greedy/Gas%20Station.md)
