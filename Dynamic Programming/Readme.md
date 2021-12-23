@@ -4,7 +4,7 @@
 | ----------- | ----------- | ----------- | ----------
 | 1 | A - Frog 1 | [Link](https://atcoder.jp/contests/dp/tasks/dp_a) | [Link]()
 | 2 | B - Frog 2 | [Link](https://atcoder.jp/contests/dp/tasks/dp_b) | [Link]()
-| 3 | Min Cost Climbing Stairs | [Link](https://leetcode.com/problems/min-cost-climbing-stairs/) | [Link]()
+| 3 | Min Cost Climbing Stairs | [Link](https://leetcode.com/problems/min-cost-climbing-stairs/) | [Link](https://github.com/Debdyut/Algorithm-Interview-Prep/blob/main/Dynamic%20Programming/Min%20Cost%20Climbing%20Stairs.md)
 | 4 | House Robber | [Link](https://leetcode.com/problems/house-robber/) | [Link](https://github.com/Debdyut/Algorithm-Interview-Prep/blob/main/Dynamic%20Programming/198.%20House%20Robber.md)
 | 5 | Vacation | [Link](https://atcoder.jp/contests/dp/tasks/dp_c) | [Link](https://github.com/Debdyut/Algorithm-Interview-Prep/blob/main/Dynamic%20Programming/C-Vacation.md)
 | 6 | 0 - 1 Knapsack Problem | [Link](https://practice.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1#) | [Link](https://github.com/Debdyut/Algorithm-Interview-Prep/blob/main/Dynamic%20Programming/0-1%20Knapsack.md)
