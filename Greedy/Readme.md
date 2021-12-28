@@ -17,3 +17,4 @@
 | 3 | Gas Station | [Leetcode](https://leetcode.com/) |[Link](https://leetcode.com/problems/gas-station/) | [Link](https://github.com/Debdyut/Algorithm-Interview-Prep/blob/main/Greedy/Gas%20Station.md)
 | 4 | Candy | [Leetcode](https://leetcode.com/) |[Link](https://leetcode.com/problems/candy/) | [Link](https://github.com/Debdyut/Algorithm-Interview-Prep/blob/main/Greedy/Candy.md)
 | 5 | Largest Number | [Leetcode](https://leetcode.com/) |[Link](https://leetcode.com/problems/largest-number/) | [Link](https://github.com/Debdyut/Algorithm-Interview-Prep/blob/main/Greedy/Largest%20Number.md)
+| 6 | Remove Duplicate Letters | [Leetcode](https://leetcode.com/) |[Link](https://leetcode.com/problems/remove-duplicate-letters/) | [Link](https://github.com/Debdyut/Algorithm-Interview-Prep/blob/main/Greedy/Remove%20Duplicate%20Letters.md)
