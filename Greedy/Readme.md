@@ -16,3 +16,4 @@
 | 2 | Best Time to Buy and Sell Stock II | [Leetcode](https://leetcode.com/) |[Link](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/) | [Link](https://github.com/Debdyut/Algorithm-Interview-Prep/blob/main/Greedy/Best%20Time%20to%20Buy%20and%20Sell%20Stock%20II.md)
 | 3 | Gas Station | [Leetcode](https://leetcode.com/) |[Link](https://leetcode.com/problems/gas-station/) | [Link](https://github.com/Debdyut/Algorithm-Interview-Prep/blob/main/Greedy/Gas%20Station.md)
 | 4 | Candy | [Leetcode](https://leetcode.com/) |[Link](https://leetcode.com/problems/candy/) | [Link](https://github.com/Debdyut/Algorithm-Interview-Prep/blob/main/Greedy/Candy.md)
+| 5 | Largest Number | [Leetcode](https://leetcode.com/) |[Link](https://leetcode.com/problems/largest-number/) | [Link](https://github.com/Debdyut/Algorithm-Interview-Prep/blob/main/Greedy/Largest%20Number.md)
