@@ -1,10 +1,10 @@
 
-# Sum of Digits 
+# Digit Sum 
 **Author:** Debdyut Hajra <br/>
 **Created date:** 29 December 2021 <br/>
 **Last updated:** 29 December 2021 <br/>
 
-**Problem Link:** [CPCRC1C - Sum of Digits](https://www.spoj.com/problems/CPCRC1C/) <br/>
+**Problem Link:** [PR003004 - Digit Sum](https://www.spoj.com/problems/PR003004/) <br/>
 **Tags:** Digit Dynamic Programming
 
 ## Problem
@@ -14,18 +14,20 @@ Given a range [a, b], find sum of digits of all the numbers in the range.
 **Example:**
 
 **Input:**  <br/>
-1 10  <br/>
-100 777  <br/>
--1 -1  <br/>
+3  <br/>
+0 10  <br/>
+28 31  <br/>
+1234 56789  <br/>
 
 **Output:**  <br/>
 46  <br/>
-8655  <br/>
+28  <br/>
+1128600  <br/>
 
 **Constraints:**
 
-- `T ≤ 200`
-- `0 <= a <= b <= 10^9`
+- `T ≤ 100`
+- `0 <= a <= b <= 10^15`
 
 ## Solutions
 
@@ -36,12 +38,12 @@ We will look at the following solutions:
 ### 1. Digit DP
 
 ```java
-private static long solve(int a, int b) {
-    // Sum of digits [0,b] - Sum of digits [0,a-1] = Sum of digits [a, b]       
+private static long solve(long a, long b) {
+    // Sum of digits [0,b] - Sum of digits [0,a-1] = Sum of digits [a, b]  
     return solve(b) - solve(a-1);
 }
 
-private static long solve(int n) {
+private static long solve(long n) {
     // If given number is less than or equal to 0
     if (n <= 0) {
         return 0;
@@ -54,20 +56,20 @@ private static long solve(int n) {
             for (int k = 0; k < dp[0][0].length; k++) {
                 dp[i][j][k] = -1;
             }
-        }
+        }    
     }
 
     // Create list of digits, in reverse order
     List<Integer> ls = new ArrayList<>();
     while (n > 0) {
-        ls.add(n % 10);
+        ls.add((int) (n % 10));
         n /= 10;
     }
     // Sum of digits [0, n]
-    return solve(ls, ls.size()-1, 0, false, dp);
+    return solve(ls, ls.size()-1, false, 0, dp);
 }
 
-private static long solve(List<Integer> n, int pos, int sum, boolean flag, long[][][] dp) {
+private static long solve(List<Integer> n, int pos, boolean flag, int sum, long[][][] dp) {
     // If all digits are exhausted
     if (pos == -1) {
         // Return sum of digits of the number
@@ -87,14 +89,14 @@ private static long solve(List<Integer> n, int pos, int sum, boolean flag, long[
     // Track the total sum
     long ans = 0;
     // For all possible digits we can place
-    for(int i = 0; i <= limit; i++) {  
-        // If we are within the limit                         
+    for (int i = 0; i <= limit; i++) {
+        // If we are within the limit 
         if (i < limit) {
             // We can set any digit in the next iteration
-            ans += solve(n, pos-1, sum+i, true, dp);
-        } else {
+            ans += solve(n, pos-1, true, sum+i, dp);
+        }  else {
             // Else it will depend on the current flag
-            ans += solve(n, pos-1, sum+i, flag, dp);
+            ans += solve(n, pos-1, flag, sum+i, dp);
         }
     }
     // Update dp
@@ -106,15 +108,13 @@ private static long solve(List<Integer> n, int pos, int sum, boolean flag, long[
 public static void main(String[] args) {
     PrintWriter out = new PrintWriter(System.out);
     Judge solution = new Judge();
-    InputReader in = solution.new InputReader(System.in);        
+    InputReader in = solution.new InputReader(System.in);
 
-    while (true) {            
-        int a = in.readInt();
-        int b = in.readInt();
-                
-        if (a == -1 && b == -1) {
-            break;
-        }
+    int t = in.readInt();
+
+    while (t-- > 0) {            
+        long a = in.readLong();
+        long b = in.readLong();
 
         out.println(solve(a, b));
     }
