@@ -37,7 +37,6 @@ We will look at the following solutions:
 2. [Driver code](#2-driver-code)
 
 ### 1. Digit DP
-The primary intuition behind the solution is that given some items have been selected and given the remaining weight, whether or not we can pick the current item. Also, how the result will be impacted if we choose to not pick the current item, such that the remaining weight remains the same for the next item. We then try to find the combination for which we get the maximum sum of values.
 
 ```java
 static int solve(int n, int k, int[][][] dp) {
@@ -115,7 +114,8 @@ public static void main(String[] args) throws Exception {
         int b = in.readInt();
         int k = in.readInt();
 
-        int[][][] dp = new int[15][150][150];         
+        // Initialize dp[max number of digits][maximum sum][maximum number]
+        int[][][] dp = new int[15][150][150]; // dimensions are not exact       
         for (int p = 0; p < dp.length; p++) {
             for (int q = 0; q < dp[0].length; q++) {
                 for (int r = 0; r < dp[0][0].length; r++) {
