@@ -1,0 +1,1 @@
+https://codeforces.com/blog/entry/53960?#comment-389306

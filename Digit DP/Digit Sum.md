@@ -90,7 +90,7 @@ private static long solve(List<Integer> n, int pos, boolean flag, int sum, long[
     long ans = 0;
     // For all possible digits we can place
     for (int i = 0; i <= limit; i++) {
-        // If we are within the limit 
+        // If the current digit is less than the limit 
         if (i < limit) {
             // We can set any digit in the next iteration
             ans += solve(n, pos-1, true, sum+i, dp);
