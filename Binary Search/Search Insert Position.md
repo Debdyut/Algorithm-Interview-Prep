@@ -1,38 +1,39 @@
 
-# Binary Search
+# Search Insert Position
 **Author:** Debdyut Hajra <br/>
-**Created date:** 3 January 2022 <br/>
-**Last updated:** 3 January 2022 <br/>
+**Created date:** 16 January 2022 <br/>
+**Last updated:** 16 January 2022 <br/>
 
-**Problem Link:** [704. Binary Search](https://leetcode.com/problems/binary-search/) <br/>
+**Problem Link:** [35. Search Insert Position](https://leetcode.com/problems/search-insert-position/) <br/>
 **Tags:** Array, Binary Search
 
 ## Problem
 
-Given an integer array sorted in ascending order, find the target element. Return -1 if not found.
+Given an integer array sorted in ascending order, find the element position or the position where it can be inserted to keep the array sorted.
 
 **Example:**
 
-**Input:** nums = [-1,0,3,5,9,12], target = 9 <br/>
-**Output:** 4 <br/>
-**Explanation:** 9 exists in nums and its index is 4 <br/>
+**Input:** nums = [1,3,5,6], target = 5 <br/>
+**Output:** 2
 
 **Constraints:**
 
 - `1 <= nums.length <= 10^4`
-- `-10^4 < nums[i], target < 10^4`
-- `All the integers in nums are unique.`
-- `nums is sorted in ascending order.`
+- `-10^4 <= nums[i] <= 10^4`
+- `nums contains distinct values sorted in ascending order.`
+- `-10^4 <= target <= 10^4`
 
 ## Solutions
 
 ```java
-public int search(int[] nums, int target) {
+public int searchInsert(int[] nums, int target) {
     int n = nums.length;
     // Take the left limit as the starting element of array
     int start = 0;
     // Take the right limit as the last element of array
     int end = n-1;
+    // Track the ceil of the target element, defaults to end of array
+    int ceil = n;
     // While left pointer does not cross the right pointer
     while (start <= end) {
         // Find the middle element between the left and right pointer
@@ -46,16 +47,18 @@ public int search(int[] nums, int target) {
         }
         // If target lies on left of the middle element
         else if (nums[mid] > target) {
+            // Update the ceil of target element
+            ceil = mid;
             // Update the right pointer
             end = mid-1;
-        } 
+        }
         // Else if target lies on right of the middle element
         else {
             // Update the left pointer
             start = mid+1;
         }
     }
-    // Target element not found
-    return -1;
+    // Return the position where the element can be inserted
+    return ceil;
 }
 ```
